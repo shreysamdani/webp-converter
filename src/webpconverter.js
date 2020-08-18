@@ -274,7 +274,31 @@ module.exports.webpmux_getframe = (input_image, output_image, frame_number) => {
   });
 };
 
-//%%%%%%%%%%%% Get the a frame from an animated WebP file
+//%%%%%%%%%%%% Get info from a WebP file
+
+module.exports.webpmux_getinfo = (input_image) => {
+  // input_image: input image(.webp)
+
+  const query = `-json-info "${input_image}"`;
+
+  //webpmux() return which platform webp library should be used for conversion
+  return new Promise((resolve, reject) => {
+    //execute command
+    exec(
+      `"${webpmux()}"`,
+      query.split(/\s+/),
+      { shell: true },
+      (error, stdout, stderr) => {
+        if (error) {
+          console.warn(error);
+        }
+        resolve(stdout ? JSON.parse(stdout) : stderr);
+      }
+    );
+  });
+};
+
+//%%%%%%%%%%%% Get the a frames from an animated WebP file
 
 module.exports.anim_dump = (
   input_image,

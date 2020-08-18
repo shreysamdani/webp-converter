@@ -31,6 +31,7 @@
     "src/dwebp.js",
     "src/gwebp.js",
     "src/webpmux.js",
+    "src/anim_dump.js",
     "bin/",
     "images/",
     "temp/"
