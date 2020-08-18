@@ -1,3 +1,5 @@
+FORK TO IMPLEMENT ANIM_DUMP WITH A MODIFIED BINARY
+
 [![webp-converter Logo](images/nlogo.gif)](https://www.npmjs.com/package/webp-converter)
 
 [webp-converter v2.3.0](https://www.npmjs.com/package/webp-converter)
